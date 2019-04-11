@@ -21,7 +21,8 @@ PASS = 'root' #your password
 
 ### Running
 RUN COMMAND: 
-```sh python3 AntGuardian.py
+```sh 
+python3 AntGuardian.py
 ```
 while in the directory of the script file.
 
