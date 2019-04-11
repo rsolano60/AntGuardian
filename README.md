@@ -11,7 +11,9 @@ A computer with an OS and Python 3
 SETUP: input these 3 variables in script file AntGuardian.py
 
 ipList = ('192.168....','192.168....','192.168....') #your miners
+-
 USER = 'root' #your username
+-
 PASS = 'root' #your password
 
 ### Running
