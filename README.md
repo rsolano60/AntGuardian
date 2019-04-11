@@ -19,6 +19,12 @@ PASS = 'root' #your password
 RUN COMMAND:
 Python3 AntGuardian.py
 while in the directory of the script file.
+-
+![alt text](https://blockchain.info/qr?data=35w2Zmuj9Y83vb8uFvfjxQQfuzVYKwY4Dd&size=200)
+
+### Example: One miner restarting (out of 3)
+-
+![alt text](https://blockchain.info/qr?data=35w2Zmuj9Y83vb8uFvfjxQQfuzVYKwY4Dd&size=200)
 
 ## Authors
 
@@ -30,8 +36,8 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 This project is licensed under the GNU GPL V3 License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Please Donate
-BTC:
+## Please Donate BTC
+---
 35w2Zmuj9Y83vb8uFvfjxQQfuzVYKwY4Dd
 -
 ![alt text](https://blockchain.info/qr?data=35w2Zmuj9Y83vb8uFvfjxQQfuzVYKwY4Dd&size=200)
