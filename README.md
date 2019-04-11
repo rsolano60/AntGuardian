@@ -64,7 +64,7 @@ t1W8vQte15jatZyzBcYuubzznMTF6LhEWJ9
 ```sh
 qqgpy278maqdngqqf7ts232fjnk5kmusw5wag2ykjy
 ```
-## or some XLM, STELARR
+## or some XLM, STELAR
 ```sh
 GBJMCLVHEVBDMT6GYZ7LPAQJJZHAOPD7KO2Y3GSUTH4XZYB3V3MV4BJY
 ```
