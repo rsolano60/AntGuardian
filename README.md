@@ -10,7 +10,7 @@ A computer with an OS and Python 3
 ### Installing
 SETUP: input these 3 variables in script file AntGuardian.py
 
-ipList = ('192.168....','192.168....','192.168....') #your miners
+ipList = ('192.168....','192.168....','192.168....') #your miners, must have the same root password
 
 USER = 'root' #your username
 
