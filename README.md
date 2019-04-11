@@ -5,8 +5,7 @@ Compatible with all antminers that use BMMiner
 
 ### Prerequisites
 
-A computer with an OS
-Python 3
+A computer with an OS and Python 3
 
 ### Installing
 SETUP: input these 3 variables in script file AntGuardian.py
@@ -20,11 +19,11 @@ RUN COMMAND:
 Python3 AntGuardian.py
 while in the directory of the script file.
 -
-![alt text](https://blockchain.info/qr?data=35w2Zmuj9Y83vb8uFvfjxQQfuzVYKwY4Dd&size=200)
+![alt text](https://raw.githubusercontent.com/rsolano60/Examples/master/init.jpeg)
 
 ### Example: One miner restarting (out of 3)
 -
-![alt text](https://blockchain.info/qr?data=35w2Zmuj9Y83vb8uFvfjxQQfuzVYKwY4Dd&size=200)
+![alt text](https://raw.githubusercontent.com/rsolano60/Examples/master/work.jpeg)
 
 ## Authors
 
