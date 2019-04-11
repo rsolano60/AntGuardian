@@ -4,6 +4,8 @@ Antminer SSH monitor and auto-restart tool
 
 Compatible with all antminers that use BMMiner
 
+Restarts miner when accepted shares do not increase in 95 seconds
+
 ### Prerequisites
 
 A computer with an OS and Python 3
