@@ -3,10 +3,6 @@
 Antminer monitor and restart tool 
 Compatible with all antminers that use BMMiner
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
 A computer with an OS
@@ -23,8 +19,10 @@ PASS = 'root' #your password
 RUN COMMAND:
 Python3 AntGuardian.py
 while in the directory of the script file.
+![alt text](https://blockchain.info/qr?data=35w2Zmuj9Y83vb8uFvfjxQQfuzVYKwY4Dd&size=200)
 
-## Authors
+### Example: Miner being restarted automatically
+![alt text](https://blockchain.info/qr?data=35w2Zmuj9Y83vb8uFvfjxQQfuzVYKwY4Dd&size=200)
 
 * **Ricardo Solano** - *Initial work* - [RSolano](https://github.com/rsolano60)
 
@@ -34,8 +32,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 This project is licensed under the GNU GPL V3 License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Please Donate
-BTC:
+## Please Donate BTC
 35w2Zmuj9Y83vb8uFvfjxQQfuzVYKwY4Dd
 ![alt text](https://blockchain.info/qr?data=35w2Zmuj9Y83vb8uFvfjxQQfuzVYKwY4Dd&size=200)
 
