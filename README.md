@@ -11,16 +11,18 @@ A computer with an OS and Python 3
 SETUP: input these 3 variables in script file AntGuardian.py
 
 ipList = ('192.168....','192.168....','192.168....') #your miners
--
+
 USER = 'root' #your username
--
+
 PASS = 'root' #your password
 
 ### Running
 RUN COMMAND: 
+
 "Python3 AntGuardian.py"
+
 while in the directory of the script file.
--
+
 ![alt text](https://raw.githubusercontent.com/rsolano60/Examples/master/init.jpeg)
 
 ### Example: One miner restarting (out of 3)
