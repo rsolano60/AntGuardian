@@ -1,6 +1,7 @@
 # Ant Guardian
 
-Antminer monitor and restart tool 
+Antminer SSH monitor and auto-restart tool 
+
 Compatible with all antminers that use BMMiner
 
 ### Prerequisites
