@@ -10,6 +10,13 @@ Restarts miner when accepted shares do not increase in 95 seconds
 
 A computer with an OS and Python 3
 
+All Mac and Linux computers come with Python pre-installed
+
+You allso need to install paramiko module for SSH comunication using the command:
+```sh
+py -m pip install paramiko
+```
+
 ### Installing
 SETUP: input these 3 variables in script file AntGuardian.py
 ```sh
@@ -20,11 +27,16 @@ PASS = 'root' #your password
 ```
 
 ### Running
-RUN COMMAND: 
+RUN COMMAND (Mac & Linux): 
 ```sh 
 python3 AntGuardian.py
 ```
-while in the directory of the script file.
+RUN COMMAND (Windows):
+```sh
+py -m pip install paramiko
+```
+
+run command while in the directory of the script file.
 
 ![alt text](https://raw.githubusercontent.com/rsolano60/Examples/master/init.jpeg)
 
@@ -72,3 +84,4 @@ GBJMCLVHEVBDMT6GYZ7LPAQJJZHAOPD7KO2Y3GSUTH4XZYB3V3MV4BJY
 ```sh
 AGuQfFB4mHBCpUmXmGxtiU9vEZGBiu2ZCW
 ```
+
