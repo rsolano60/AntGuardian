@@ -22,11 +22,11 @@ py -m pip install paramiko
 pip install paramiko
 ```
 ### Setup
-Input these 3 variables in script file AntGuardian.py; ipList, USER and PASS 
+Input these 3 variables in script file AntGuardian.py: ipList, USER and PASS 
 
-by replacing the examples with the real values inside quotes
+by replacing the examples inside quotes with the real values. (username and password is root by default)
 
-These should match the Ip, Username and Password of all your miners (username and password is root by default)
+Real values should match the Ip, Username and Password of all the miners you want to monitor and control.
 
 You can add or remove miners to ipList as you need
 ```sh
