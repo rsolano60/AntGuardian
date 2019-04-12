@@ -17,7 +17,7 @@ You also might need to install Python paramiko module for SSH comunication using
 ```sh
 py -m pip install paramiko
 ```
-Mac and Linux (you may not need to do this, but it does not hurt)
+(Mac and Linux) users: you may not need to do this, but it can´t hurt to do it anyway
 ```sh
 pip install paramiko
 ```
@@ -89,3 +89,4 @@ GBJMCLVHEVBDMT6GYZ7LPAQJJZHAOPD7KO2Y3GSUTH4XZYB3V3MV4BJY
 ```sh
 AGuQfFB4mHBCpUmXmGxtiU9vEZGBiu2ZCW
 ```
+
