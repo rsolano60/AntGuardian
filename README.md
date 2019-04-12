@@ -8,11 +8,11 @@ Restarts miner when accepted shares do not increase in 95 seconds
 
 ### Prerequisites
 
-A computer with an OS and Python 3
+A computer with Python
 
 All Mac and Linux computers come with Python pre-installed
 
-You allso need to install paramiko module for SSH comunication using the command:
+You allso need to install Python paramiko module for SSH comunication using the command:
 ```sh
 py -m pip install paramiko
 ```
@@ -36,7 +36,7 @@ RUN COMMAND (Windows):
 py -m pip install paramiko
 ```
 
-run command while in the directory of the script file.
+run command while in the directory of the script file. May vary with Python versions.
 
 ![alt text](https://raw.githubusercontent.com/rsolano60/Examples/master/init.jpeg)
 
