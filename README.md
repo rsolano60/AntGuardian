@@ -12,11 +12,15 @@ A computer with Python
 
 All Mac and Linux computers come with Python pre-installed
 
-You allso need to install Python paramiko module for SSH comunication using the command:
+You also might need to install Python paramiko module for SSH comunication using the command:
+(Windows)
 ```sh
 py -m pip install paramiko
 ```
-
+Mac and Linux (you may not need to do this, but it does not hurt)
+```sh
+pip install paramiko
+```
 ### Installing
 SETUP: input these 3 variables in script file AntGuardian.py
 ```sh
@@ -33,7 +37,8 @@ python3 AntGuardian.py
 ```
 RUN COMMAND (Windows):
 ```sh
-py -m pip install paramiko
+py AntGuardian.py
+
 ```
 
 run command while in the directory of the script file. May vary with Python versions.
@@ -84,4 +89,3 @@ GBJMCLVHEVBDMT6GYZ7LPAQJJZHAOPD7KO2Y3GSUTH4XZYB3V3MV4BJY
 ```sh
 AGuQfFB4mHBCpUmXmGxtiU9vEZGBiu2ZCW
 ```
-
