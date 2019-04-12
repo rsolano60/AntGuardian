@@ -13,11 +13,14 @@ A computer with Python
 All Mac and Linux computers come with Python pre-installed
 
 You also might need to install Python paramiko module for SSH comunication using the command:
-(Windows)
+
+(Windows) COMMAND:
 ```sh
 py -m pip install paramiko
 ```
-(Mac and Linux) users: you may not need to do this, but it can´t hurt to do it anyway
+You may not need to do this for Mac/Linux, but it can´t hurt to do it anyway
+
+(Mac and Linux) COMMAND:
 ```sh
 pip install paramiko
 ```
@@ -37,11 +40,11 @@ PASS = 'root' #your password
 ```
 
 ### Running
-RUN COMMAND (Mac & Linux): 
+(Mac & Linux) RUN COMMAND: 
 ```sh 
 python3 AntGuardian.py
 ```
-RUN COMMAND (Windows):
+(Windows) RUN COMMAND:
 ```sh
 py AntGuardian.py
 
@@ -83,8 +86,7 @@ Xcs6DN7LXnEtQqLiKVGwZMLpMGJ9tufBcP
 ```sh
 t1W8vQte15jatZyzBcYuubzznMTF6LhEWJ9
 ```
-## or some BCH, Bitcoin Cash (BCash)
-```sh
+or some BCH, Bitcoin Cash (BCash) ```sh
 qqgpy278maqdngqqf7ts232fjnk5kmusw5wag2ykjy
 ```
 ## or some XLM, STELAR
