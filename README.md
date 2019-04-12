@@ -63,7 +63,7 @@ See also the list of [contributors](https://github.com/rsolano60/AntGuardian/gra
 
 ## License
 
-This project is licensed under the GNU GPL V3 License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU GPL V3 License - see the [LICENSE](LICENSE) file for details
 
 ## Please Donate some satoshis BTC, BITCOIN
 ```sh
