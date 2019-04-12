@@ -21,8 +21,8 @@ py -m pip install paramiko
 ```sh
 pip install paramiko
 ```
-### Installing
-SETUP: input these 3 variables in script file AntGuardian.py
+### Setup
+Input these 3 variables in script file AntGuardian.py
 ```sh
 #SETUP:
 ipList = ('192.168....','192.168....','192.168....') #your miners, must have the same root password
@@ -89,4 +89,3 @@ GBJMCLVHEVBDMT6GYZ7LPAQJJZHAOPD7KO2Y3GSUTH4XZYB3V3MV4BJY
 ```sh
 AGuQfFB4mHBCpUmXmGxtiU9vEZGBiu2ZCW
 ```
-
