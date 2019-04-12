@@ -22,7 +22,13 @@ py -m pip install paramiko
 pip install paramiko
 ```
 ### Setup
-Input these 3 variables in script file AntGuardian.py
+Input these 3 variables in script file AntGuardian.py; ipList, USER and PASS 
+
+by replacing the examples with the real values inside quotes
+
+These should match the Ip, Username and Password of all your miners (username and password is root by default)
+
+You can add or remove miners to ipList as you need
 ```sh
 #SETUP:
 ipList = ('192.168....','192.168....','192.168....') #your miners, must have the same root password
@@ -53,7 +59,7 @@ run command while in the directory of the script file. May vary with Python vers
 
 * **Ricardo Solano** - *Initial work* - [RSolano](https://github.com/rsolano60)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/rsolano60/AntGuardian/graphs/contributors) who participated in this project.
 
 ## License
 
@@ -89,3 +95,4 @@ GBJMCLVHEVBDMT6GYZ7LPAQJJZHAOPD7KO2Y3GSUTH4XZYB3V3MV4BJY
 ```sh
 AGuQfFB4mHBCpUmXmGxtiU9vEZGBiu2ZCW
 ```
+
