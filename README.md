@@ -2,24 +2,22 @@
 
 Antminer SSH monitor and auto-restart tool 
 
-Compatible with all antminers that use BMMiner
+Compatible with all antminers that use BMMiner and have SSH acces enabled
 
 Restarts miner when accepted shares do not increase in 95 seconds
 
 ### Prerequisites
 
-A computer with Python
+* A computer with Python
 
 All Mac and Linux computers come with Python pre-installed
 
-You also might need to install Python paramiko module for SSH comunication using the command:
+* Install Python paramiko module for SSH comunication using the command:
 
 (Windows) COMMAND:
 ```sh
 py -m pip install paramiko
 ```
-You may not need to do this for Mac/Linux, but it can´t hurt to do it anyway
-
 (Mac and Linux) COMMAND:
 ```sh
 pip install paramiko
@@ -49,7 +47,6 @@ python3 AntGuardian.py
 py AntGuardian.py
 
 ```
-
 run command while in the directory of the script file. May vary with Python versions.
 
 ![alt text](https://raw.githubusercontent.com/rsolano60/Examples/master/init.jpeg)
@@ -60,7 +57,7 @@ run command while in the directory of the script file. May vary with Python vers
 
 ## Authors
 
-* **Ricardo Solano** - *Initial work* - [RSolano](https://github.com/rsolano60)
+**Ricardo Solano** - *Initial work* - [RSolano](https://github.com/rsolano60)
 
 See also the list of [contributors](https://github.com/rsolano60/AntGuardian/graphs/contributors) who participated in this project.
 
@@ -86,7 +83,7 @@ Xcs6DN7LXnEtQqLiKVGwZMLpMGJ9tufBcP
 ```sh
 t1W8vQte15jatZyzBcYuubzznMTF6LhEWJ9
 ```
-#### or some BCH, Bitcoin Cash (BCash) 
+#### or some BCH, Bitcoin Cash
 ```sh
 qqgpy278maqdngqqf7ts232fjnk5kmusw5wag2ykjy
 ```
