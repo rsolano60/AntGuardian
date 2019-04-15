@@ -2,7 +2,7 @@
 
 Antminer SSH monitor and auto-restart tool 
 
-Compatible with all antminers that use BMMiner and have SSH acces enabled
+Compatible with all AntMiners that use BMMiner and have SSH enabled
 
 Restarts miner when accepted shares do not increase in 95 seconds
 
@@ -27,9 +27,9 @@ Input these 3 variables in script file AntGuardian.py: ipList, USER and PASS
 
 by replacing the examples inside quotes with the real values. (username and password is root by default)
 
-Real values should match the Ip, Username and Password of all the miners you want to monitor and control.
+Real values should match the IP address, Username and Password of all the miners you want to monitor and control.
 
-You can add or remove miners to ipList as you need
+You can add or remove miners from ipList as you need
 ```sh
 #SETUP:
 ipList = ('192.168....','192.168....','192.168....') #your miners, must have the same root password
