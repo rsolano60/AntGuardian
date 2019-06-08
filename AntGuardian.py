@@ -1,13 +1,13 @@
 #AntGuardian - A simple AntMiner monitor and auto-restart tool
 #By RSolano
 #License: GNU General Public license Version 3
-#Version 0.1.5
+#Version 0.0.2
 #Run command:
 #Python3 AntGuardian.py
 #--------SETUP-------------SETUP-------------SETUP-------------SETUP-------------SETUP-------------SETUP-----
-ipList = ('192.168....','192.168....','192.168....') #your miners
-USER = 'root' #your username
-PASS = 'root' #your password
+ipList = ('192.168.1.136','192.168.1.137','192.168.1.138')
+USER = 'root'
+PASS = 'abajOlivia60'
 #--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP---
 import sys
 import paramiko
