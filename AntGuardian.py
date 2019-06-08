@@ -5,9 +5,9 @@
 #Run command:
 #Python3 AntGuardian.py
 #--------SETUP-------------SETUP-------------SETUP-------------SETUP-------------SETUP-------------SETUP-----
-ipList = ('192.168.1.136','192.168.1.137','192.168.1.138')
+ipList = ('192.168....','192.168....','192.168....')
 USER = 'root'
-PASS = 'abajOlivia60'
+PASS = 'root'
 #--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP---
 import sys
 import paramiko
