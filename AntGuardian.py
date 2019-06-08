@@ -1,15 +1,14 @@
-#AntGuardian
+#AntGuardian - A simple AntMiner monitor and auto-restart tool
 #By RSolano
 #License: GNU General Public license Version 3
-#Version 0.1.2
-#Run command: Python3 AntGuardian.py
-
-#SETUP: input these 3 variables
+#Version 0.1.5
+#Run command:
+#Python3 AntGuardian.py
+#--------SETUP-------------SETUP-------------SETUP-------------SETUP-------------SETUP-------------SETUP-----
 ipList = ('192.168....','192.168....','192.168....') #your miners
 USER = 'root' #your username
 PASS = 'root' #your password
-
-
+#--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP---
 import sys
 import paramiko
 import re
@@ -22,16 +21,13 @@ def getAccShares(ip):
 			return line[17:-2]	# Return accepted shares value 
 	print(' Could not connect to:' + str(ip))
 def restartMiner(ip):
-	#stdin, stdout, stderr = clientList[ip].exec_command('/usr/bin/bmminer-api')
-	#for line in stdout:
-	#	print(line.strip())
 	print(str(ip) + ' not mining!!! Rebooting...')
 	try:
 		stdin, stdout, stderr = clientList[ip].exec_command('/sbin/reboot')
 	except:
 		print(' Could not connect to:' + str(ip))
 	else:
-		print(' Succsess!!!  ' + str(ip) + ' rebooting now!' )
+		print(' Succsess!!!  ' + str(ip) + ' rebooting now!' )		
 def connectMiner(ip):
 	try:
 		clientList[ip].connect(ip, username=USER, password=PASS) # Connect to host in case restar failed
@@ -39,34 +35,28 @@ def connectMiner(ip):
 		print(' Could not connect to:' + str(ip))
 		pass
 	else:
-		print(str(ip) + ' Connected: {:%Y-%m-%d %H:%M:%S}'.format(lastRestart[ip]))		
-# Main program Loop
-accShares = {}
-prevAccShares = {}
-lastRestart = {}
-clientList = {}
-for ip in ipList:
-	lastRestart[ip] = datetime.datetime.now()
-	prevAccShares[ip] = 0
+		clientList[ip].lastRestarted = datetime.datetime.now()
+		print(str(ip) + ' Connected: {:%Y-%m-%d %H:%M:%S}'.format(clientList[ip].lastRestarted))
+clientList = {} # Initialization
+for ip in ipList:	# Open all cnnections
 	clientList[ip] = paramiko.SSHClient()
-	clientList[ip].set_missing_host_key_policy(paramiko.AutoAddPolicy()) # Auto add host key
-	connectMiner(ip) # Connect to host
-	lastRestart[ip] = datetime.datetime.now()
-	prevAccShares[ip] = 0
-while True:
+	clientList[ip].set_missing_host_key_policy(paramiko.AutoAddPolicy()) 	# Set auto add host key policy
+	connectMiner(ip) 	# Connect to host
+	clientList[ip].acceptedShares = 0
+	clientList[ip].prevAccShares = 0
+while True:		# Main program loop
 	for ip in ipList:
-		secondsSinceRestart = (datetime.datetime.now() - lastRestart[ip]).seconds
+		secondsSinceRestart = (datetime.datetime.now() - clientList[ip].lastRestarted).seconds
 		try:
-			accShares[ip] = getAccShares(ip)
+			clientList[ip].acceptedShares = getAccShares(ip)
 		except:
 			print(str(ip) + ' Reconnecting... ---  Rebooted: ' + str(secondsSinceRestart)+ ' s ago.')
 			connectMiner(ip)
 		else:
-			print(str(ip) + ' Shares:' + str(prevAccShares[ip]) + '>' + str(accShares[ip])+ '  ---  Rebooted: ' + str(secondsSinceRestart)+ ' s ago.')
-		if accShares[ip] == prevAccShares[ip] and secondsSinceRestart > 300: 
+			print(str(ip) + ' Shares:' + str(clientList[ip].prevAccShares) + '>' + str(clientList[ip].acceptedShares)+ '  ---  Rebooted: ' + str(secondsSinceRestart)+ ' s ago.')
+		if clientList[ip].acceptedShares == clientList[ip].prevAccShares and secondsSinceRestart > 300: 
 			restartMiner(ip)
-			lastRestart[ip] = datetime.datetime.now()
-		prevAccShares[ip] = accShares[ip]
-		tSleep = 95 / len(ipList)
-		time.sleep(tSleep)
+			clientList[ip].lastRestarted = datetime.datetime.now()
+		clientList[ip].prevAccShares = clientList[ip].acceptedShares
+		time.sleep(95 / len(ipList))
 client.close()
