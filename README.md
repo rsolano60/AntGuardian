@@ -12,6 +12,8 @@ Restarts miner when accepted shares do not increase in SECONDS_TO_WAIT seconds, 
 
 All Mac and Linux computers come with Python pre-installed
 
+### Installation
+
 * Install Python requirements using the command:
 
 (Windows) COMMAND:
