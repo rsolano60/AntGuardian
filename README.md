@@ -2,9 +2,9 @@
 
 Antminer SSH monitor and auto-restart tool 
 
-Compatible with all AntMiners that use BMMiner and have SSH enabled
+Compatible with all AntMiners that use BMMiner and have SSH enabled (Like antminer S9
 
-Restarts miner when accepted shares do not increase in 95 seconds
+Restarts miner when accepted shares do not increase in SECONDS_TO_WAIT seconds, and there is an active internet connection (checks with google.com).
 
 ### Prerequisites
 
@@ -12,15 +12,15 @@ Restarts miner when accepted shares do not increase in 95 seconds
 
 All Mac and Linux computers come with Python pre-installed
 
-* Install Python paramiko module for SSH comunication using the command:
+* Install Python requirements using the command:
 
 (Windows) COMMAND:
 ```sh
-py -m pip install paramiko
+py -m pip install -r requirements.txt
 ```
 (Mac and Linux) COMMAND:
 ```sh
-pip install paramiko
+pip install -r requirements.txt
 ```
 ### Setup
 Input these 3 variables in script file AntGuardian.py: ipList, USER and PASS 
@@ -35,7 +35,11 @@ You can add or remove miners from ipList as you need
 ipList = ('192.168....','192.168....','192.168....') #your miners, must have the same root password
 USER = 'root' #your username
 PASS = 'root' #your password
+SECONDS_TO_WAIT = 95
 ```
+you may also change the interval to wait between each check for shares, by changing SECONDS_TO_WAIT. 
+
+This variable also indicates the time to wait for a new internet connection
 
 ### Running
 (Mac & Linux) RUN COMMAND: 
