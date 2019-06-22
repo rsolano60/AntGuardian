@@ -5,11 +5,11 @@
 #Run command:
 #Python3 AntGuardian.py
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
-ipList = ('192.168....','192.168....','192.168....') # Replace for your miners IPs
+ipList = ('192.168.1.136','192.168.1.137','192.168.1.138') # Replace for your miners IPs
 USER = 'root'
-PASS = 'root' # Replace for your password
-SECONDS_4_CHECKS = 95 # you need at least 10 seconds per miner, 95
-SECONDS_TO_INTERNET = 95
+PASS = 'abajOlivia60' # Replace with your miner's password
+SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner to check the hashrate on a single thread, increase this number if monitoring 16 miners or more
+SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
 #--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP----
 import sys
@@ -76,7 +76,7 @@ This class represents a Bitmain Antminer
 	def getLastRebooted(self):
 		return self.__lastRebooted
 	def __str__(self):
-		info= " {0} Accepted Shares submited by [{1} @ {2}] Alive: {3}".format(self.__acceptedShares,self.__minerType,self.__ip,self.__alive)
+		info= " {0} good shares by [{1} @ {2}] Alive: {3}. Last reboot: {4}".format(self.__acceptedShares,self.__minerType,self.__ip,self.__alive,self.__lastRebooted.strftime('%Y-%m-%d %H:%M:%S.%f')[:-7])
 		return info
 def internet(host="8.8.8.8", port=53, timeout=3): #Host: 8.8.8.8 (google-public-dns-a.google.com) - OpenPort: 53/tcp -
 	try:
@@ -109,5 +109,9 @@ while True:		# Main program loop
 				miner.reboot()
 				print('Rebooting ' +  miner.getIp())
 			else:
-				print('No internet connection, waiting ' +  str(SECONDS_4_CHECKS) + ' seconds.' )
+				while not internet():
+					print('Waiting for internet connection checking www.google.com...' )
+				print('Internet is back, waiting ' +  str(SECONDS_TO_INTERNET) + ' seconds for miners to reconnect.' )
+				time.sleep(SECONDS_TO_INTERNET)
+				print('AntGuardian ACTIVE. Stop by closing this window or pressing Ctrl+C')
 		time.sleep(secondsPerMiner)	
