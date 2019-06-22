@@ -5,9 +5,9 @@
 #Run command:
 #Python3 AntGuardian.py
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
-ipList = ('192.168.1.136','192.168.1.137','192.168.1.138') # Replace for your miners IPs
+ipList = ('192.168....','192.168....','192.168....') # Replace for your miners IPs
 USER = 'root'
-PASS = 'abajOlivia60' # Replace with your miner's password
+PASS = 'root' # Replace with your miner's password
 SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner to check the hashrate on a single thread, increase this number if monitoring 16 miners or more
 SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
