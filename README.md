@@ -1,10 +1,10 @@
 # Ant Guardian
 
-Antminer SSH monitor and auto-restart tool 
+Antminer monitor and auto-restart tool 
 
-Compatible with all AntMiners that use BMMiner and have SSH enabled (Like antminer S9
+Compatible with all AntMiners
 
-Restarts miner when accepted shares do not increase in SECONDS_TO_WAIT seconds, and there is an active internet connection (checks with google.com).
+Restarts miner when accepted shares do not increase in SECONDS_4_CHECKS seconds, and there is an active internet connection (checks with google.com).
 
 ### Prerequisites
 
