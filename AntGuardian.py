@@ -2,8 +2,7 @@
 #By RSolano
 #License: GNU General Public license Version 3
 #Version 0.1.1
-#Run command:
-#Python3 AntGuardian.py
+#    https://github.com/rsolano60/AntGuardian
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
 USER = 'root'
 PASS = 'root' # Replace with your miner's password
@@ -21,7 +20,6 @@ from bs4 import BeautifulSoup
 import html5lib
 import ast
 import nmap
-import subprocess
 
 class Miner(object):
 #This class represents a Bitmain Antminer
