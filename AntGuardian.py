@@ -5,7 +5,6 @@
 #Run command:
 #Python3 AntGuardian.py
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
-ipList = ('192.168....','192.168....','192.168....') # Replace for your miners IPs
 USER = 'root'
 PASS = 'root' # Replace with your miner's password
 SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner to check the hashrate on a single thread, increase this number if monitoring 16 miners or more
@@ -21,11 +20,11 @@ from requests.auth import HTTPDigestAuth
 from bs4 import BeautifulSoup
 import html5lib
 import ast
+import nmap
+import subprocess
 
 class Miner(object):
-	'''
-This class represents a Bitmain Antminer
-	'''
+#This class represents a Bitmain Antminer
 	def __init__(self,ip):
 		self.__ip=ip
 		self.__acceptedShares=0
@@ -37,7 +36,7 @@ This class represents a Bitmain Antminer
 		except:
 			self.__minerType = ''
 			self.__alive=False
-			print("[{0}]: Could not initialize".format(self.__ip))
+			#print("[{0}]: Could not initialize".format(self.__ip))
 	def Miner(self):
 		return self
 	def update(self):
@@ -87,16 +86,26 @@ def internet(host="8.8.8.8", port=53, timeout=3): #Host: 8.8.8.8 (google-public-
 		print(ex)
 		return False
 
-minerList = []
+while not internet():
+	print('Waiting for internet connection checking www.google.com...' )
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(('8.8.8.8', 80))
+myIP = s.getsockname()[0]
+s.close()
+ipRange = myIP[:-3] + '0/24'
+nm = nmap.PortScanner()
+nm.scan(hosts=ipRange, arguments='-sn')
+ipList = nm.all_hosts()
 print('Initializing AntGuardian... Attempting to connect to miners')
+minerList = []
 for ip in ipList:	# Create miner objects
 	m = Miner(ip)
-	minerList.append(m)
-	m.update()
-	print(m)
-#print(minerList)
+	if m.getAlive():
+		minerList.append(m)
+		m.update()
+		print(m)
 secondsPerMiner = abs((SECONDS_4_CHECKS / len(minerList)) - (6*len(minerList)))
-print('Initialization complete... AntGuardian ACTIVE. Stop by closing this window or pressing Ctrl+C')
+print('Initialization complete. Found '+str(len(minerList))+' AntMiners. AntGuardian ACTIVE. Stop by closing this window or pressing Ctrl+C')
 time.sleep(SECONDS_4_CHECKS - (6*len(minerList)))
 while True:		# Main program loop
 	for miner in minerList:
@@ -106,8 +115,8 @@ while True:		# Main program loop
 		if newShares == 0 and secondsSinceRestart > REBOOT_TIME:
 			print( str(miner.getIp()) + ' Not mining...  ---  Rebooted: ' + str(secondsSinceRestart)+ ' s ago.' )
 			if internet():
-				miner.reboot()
 				print('Rebooting ' +  miner.getIp())
+				miner.reboot()
 			else:
 				while not internet():
 					print('Waiting for internet connection checking www.google.com...' )

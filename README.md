@@ -25,23 +25,23 @@ py -m pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 ### Setup
-Input these 3 variables in script file AntGuardian.py: ipList, USER and PASS 
 
-by replacing the examples inside quotes with the real values. (username and password is root by default)
+If you have changed the password of your miners from the default, you must change the PASS varieble in the  script file AntGuardian.py
+Otherwise, you are ready to run the script. It will automatically scan the local network and try to connect to miners.
 
-Real values should match the IP address, Username and Password of all the miners you want to monitor and control.
-
-You can add or remove miners from ipList as you need
 ```sh
 #SETUP:
-ipList = ('192.168....','192.168....','192.168....') #your miners, must have the same root password
-USER = 'root' #your username
-PASS = 'root' #your password
-SECONDS_TO_WAIT = 95
+#---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
+USER = 'root'
+PASS = 'abajOlivia60' # Replace with your miner's password
+SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner to check the hashrate on a single thread, increase this number if monitoring 16 miners or more
+SECONDS_TO_INTERNET = 60
+REBOOT_TIME = 300
+#--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP----
 ```
-you may also change the interval to wait between each check for shares, by changing SECONDS_TO_WAIT. 
-
-This variable also indicates the time to wait for a new internet connection
+you may also change the interval to wait between each check for shares, by changing SECONDS_4_CHECKS. 
+REBOOT_TIME lts you set the time you want to wait for your miners to reboot when the script reboots them.
+Also you can adjust the lead time to give to your miners to restart when internet connection is lost and recovered by changing SECONDS_TO_INTERNET.
 
 ### Running
 (Mac & Linux) RUN COMMAND: 
