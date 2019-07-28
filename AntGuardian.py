@@ -11,6 +11,7 @@ SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
 #--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP----
 
+import time
 import datetime
 import socket
 import requests
