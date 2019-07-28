@@ -4,36 +4,41 @@ Antminer monitor and auto-restart tool
 
 Compatible with all AntMiners
 
-Restarts miner when accepted shares do not increase in SECONDS_4_CHECKS seconds, and there is an active internet connection (checks with google.com).
+Scans local IP Range for miners. Once connected, restarts any miner when accepted shares do not increase in SECONDS_4_CHECKS seconds, and there is an active internet connection (checks with google.com).
 
 ### Prerequisites
 
 * A computer with Python
 
-All Mac and Linux computers come with Python pre-installed
+All Mac and Linux computers come with Python pre-installed. For windows and other systems, you may need o install python first
 
 ### Installation
 
 * Install Python requirements using the command:
 
-(Windows) COMMAND:
-```sh
-py -m pip install -r requirements.txt
-```
+Using the command prompt, navigate to directory Downloads/AntGuardian and run the command:
+
+
 (Mac and Linux) COMMAND:
 ```sh
 pip install -r requirements.txt
 ```
+
+(Windows) COMMAND:
+```sh
+py -m pip install -r requirements.txt
+```
+
 ### Setup
 
-If you have changed the password of your miners from the default, you must change the PASS varieble in the  script file AntGuardian.py
+If you have changed the password of your miners from the default "root", you must change the PASS varieble in the  script file AntGuardian.py
 Otherwise, you are ready to run the script. It will automatically scan the local network and try to connect to miners.
 
 ```sh
 #SETUP:
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
 USER = 'root'
-PASS = 'abajOlivia60' # Replace with your miner's password
+PASS = 'root' # Replace with your miner's password
 SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner to check the hashrate on a single thread, increase this number if monitoring 16 miners or more
 SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
@@ -44,6 +49,8 @@ REBOOT_TIME lts you set the time you want to wait for your miners to reboot when
 Also you can adjust the lead time to give to your miners to restart when internet connection is lost and recovered by changing SECONDS_TO_INTERNET.
 
 ### Running
+Using the command prompt, while in the directory Downloads/AntGuardian, run the program by entering the command:
+
 (Mac & Linux) RUN COMMAND: 
 ```sh 
 python3 AntGuardian.py
@@ -53,7 +60,6 @@ python3 AntGuardian.py
 py AntGuardian.py
 
 ```
-run command while in the directory of the script file. May vary with Python versions.
 
 ![alt text](https://raw.githubusercontent.com/rsolano60/Examples/master/init.jpeg)
 
