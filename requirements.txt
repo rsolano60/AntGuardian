@@ -1,9 +1,6 @@
-sys
-time
 datetime
 bs4 
 html5lib
 ast
-datetime
 requests
-nmap
+python-nmap
