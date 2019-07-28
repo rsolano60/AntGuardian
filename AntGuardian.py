@@ -10,8 +10,7 @@ SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner to check the hashr
 SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
 #--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP----
-import sys
-import time
+
 import datetime
 import socket
 import requests
@@ -20,6 +19,7 @@ from bs4 import BeautifulSoup
 import html5lib
 import ast
 import nmap
+
 
 class Miner(object):
 #This class represents a Bitmain Antminer
