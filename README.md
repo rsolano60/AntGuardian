@@ -10,11 +10,17 @@ Scans local IP Range for miners. Once connected, restarts any miner when accepte
 
 * A computer with Python
 
-All Mac and Linux computers come with Python pre-installed. For windows and other systems, you may need o install python first
+All Mac and Linux computers come with Python pre-installed. For windows and other systems, you may need o download and install python first. Link:
+https://www.python.org/downloads/
 
 ### Installation
 
-* Install Python requirements using the command:
+* Install Nmap:
+
+Download and install NMap. Link:
+https://nmap.org/download.html
+
+* Install Python requirements
 
 Using the command prompt, navigate to directory Downloads/AntGuardian and run the command:
 
@@ -107,4 +113,3 @@ GBJMCLVHEVBDMT6GYZ7LPAQJJZHAOPD7KO2Y3GSUTH4XZYB3V3MV4BJY
 ```sh
 AGuQfFB4mHBCpUmXmGxtiU9vEZGBiu2ZCW
 ```
-
