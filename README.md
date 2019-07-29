@@ -8,10 +8,12 @@ Scans the local network for miners. Once connected, restarts any miner when acce
 
 ### Prerequisites
 
-* A computer with NMap and Python 2 or 3 installed
+* NMap
 
 Download and install NMap. Link:
 https://nmap.org/download.html
+
+* Python
 
 Most Mac and Linux distributions come with Python pre-installed. For windows and other systems, you may need to download and install Python first. Link:
 https://www.python.org/downloads/
