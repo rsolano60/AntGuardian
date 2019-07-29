@@ -13,7 +13,7 @@ Scans local IP Range for miners. Once connected, restarts any miner when accepte
 Download and install NMap. Link:
 https://nmap.org/download.html
 
-Most Mac and Linux distributions come with Python pre-installed. For windows and other systems, you may need o download and install Python first. Link:
+Most Mac and Linux distributions come with Python pre-installed. For windows and other systems, you may need to download and install Python first. Link:
 https://www.python.org/downloads/
 
 
