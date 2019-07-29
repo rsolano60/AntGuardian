@@ -1,14 +1,14 @@
-# Ant Guardian
+# AntGuardian
 
 Antminer monitor and auto-restart tool 
 
 Compatible with all AntMiners
 
-Scans local IP Range for miners. Once connected, restarts any miner when accepted shares do not increase in SECONDS_4_CHECKS seconds, and there is an active internet connection (checks with google.com).
+Scans the local network for miners. Once connected, restarts any miner when accepted shares do not increase in SECONDS_4_CHECKS seconds, given that there is an active internet connection (checks with google.com).
 
 ### Prerequisites
 
-* A computer with NMap and Python 2 or 3
+* A computer with NMap and Python 2 or 3 installed
 
 Download and install NMap. Link:
 https://nmap.org/download.html
@@ -19,7 +19,7 @@ https://www.python.org/downloads/
 
 ### Installation
 
-Download the Antguardian repository and unzip it. Link:
+Download the AntGuardian repository and unzip it. Link:
 https://github.com/rsolano60/AntGuardian
 
 * Install Python requirements
@@ -41,7 +41,7 @@ py -m pip install -r requirements.txt
 ### Setup
 
 If you have changed the password of your miners from the default "root", you must change the PASS varieble in the  script file AntGuardian.py
-Otherwise, you are ready to run the script. It will automatically scan the local network and try to connect to miners.
+Otherwise, you are ready to run the script.
 
 ```sh
 #SETUP:
@@ -53,9 +53,12 @@ SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
 #--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP----
 ```
-you may also change the interval to wait between each check for shares, by changing SECONDS_4_CHECKS. 
-REBOOT_TIME lts you set the time you want to wait for your miners to reboot when the script reboots them.
-Also you can adjust the lead time to give to your miners to restart when internet connection is lost and recovered by changing SECONDS_TO_INTERNET.
+*Options
+You may also change the time intervals: <br />
+
+SECONDS_4_CHECKS: seconds to wait between each check for shares. <br />
+REBOOT_TIME: seconds you want to give your miners to start mining once they are rebooted by AntGuardian. <br />
+SECONDS_TO_INTERNET: seconds to give to your miners to start mining again when internet connection is lost and recovered.
 
 ### Running
 Using the command prompt, while in the directory Downloads/AntGuardian, run the program by entering the command:
