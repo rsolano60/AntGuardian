@@ -1,6 +1,6 @@
 # AntGuardian
 
-Antminer monitor and auto-restart tool 
+AntMiner monitor and auto-restart tool 
 
 Compatible with all AntMiners
 
