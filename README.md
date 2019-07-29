@@ -48,17 +48,17 @@ Otherwise, you are ready to run the script.
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
 USER = 'root'
 PASS = 'root' # Replace with your miner's password
-SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner to check the hashrate on a single thread, increase this number if monitoring 16 miners or more
+SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner, increase this number if monitoring 16 miners or more
 SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
 #--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP----
 ```
 *Options
-You may also change the time intervals: <br />
+You may also change the time intervals (seconds): <br />
 
-SECONDS_4_CHECKS: seconds to wait between each check for shares. <br />
-REBOOT_TIME: seconds you want to give your miners to start mining once they are rebooted by AntGuardian. <br />
-SECONDS_TO_INTERNET: seconds to give to your miners to start mining again when internet connection is lost and recovered.
+SECONDS_4_CHECKS: Time to wait between each check for accepted shares. <br />
+REBOOT_TIME: Lead time given to miners to start mining once they are rebooted by AntGuardian. <br />
+SECONDS_TO_INTERNET: Lead time given to miners to start mining again when internet connection is lost and recovered.
 
 ### Running
 Using the command prompt, while in the directory Downloads/AntGuardian, run the program by entering the command:
