@@ -1,20 +1,30 @@
-# Ant Guardian
+# AntGuardian
 
-Antminer monitor and auto-restart tool 
+AntMiner monitor and auto-restart tool 
 
 Compatible with all AntMiners
 
-Scans local IP Range for miners. Once connected, restarts any miner when accepted shares do not increase in SECONDS_4_CHECKS seconds, and there is an active internet connection (checks with google.com).
+Scans the local network for miners. Once connected, restarts any miner when accepted shares do not increase in SECONDS_4_CHECKS seconds, given that there is an active internet connection (checks with google.com).
 
 ### Prerequisites
 
-* A computer with Python
+* NMap
 
-All Mac and Linux computers come with Python pre-installed. For windows and other systems, you may need o install python first
+Download and install NMap. Link:
+https://nmap.org/download.html
+
+* Python
+
+Most Mac and Linux distributions come with Python pre-installed. For windows and other systems, you may need to download and install Python first. Link:
+https://www.python.org/downloads/
+
 
 ### Installation
 
-* Install Python requirements using the command:
+Download the AntGuardian repository and unzip it. Link:
+https://github.com/rsolano60/AntGuardian
+
+* Install Python requirements
 
 Using the command prompt, navigate to directory Downloads/AntGuardian and run the command:
 
@@ -29,24 +39,28 @@ pip install -r requirements.txt
 py -m pip install -r requirements.txt
 ```
 
+
 ### Setup
 
 If you have changed the password of your miners from the default "root", you must change the PASS varieble in the  script file AntGuardian.py
-Otherwise, you are ready to run the script. It will automatically scan the local network and try to connect to miners.
+Otherwise, you are ready to run the script.
 
 ```sh
 #SETUP:
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
 USER = 'root'
 PASS = 'root' # Replace with your miner's password
-SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner to check the hashrate on a single thread, increase this number if monitoring 16 miners or more
+SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner, increase this number if monitoring 16 miners or more
 SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
 #--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP----
 ```
-you may also change the interval to wait between each check for shares, by changing SECONDS_4_CHECKS. 
-REBOOT_TIME lts you set the time you want to wait for your miners to reboot when the script reboots them.
-Also you can adjust the lead time to give to your miners to restart when internet connection is lost and recovered by changing SECONDS_TO_INTERNET.
+*Options
+You may also change the time intervals (seconds): <br />
+
+SECONDS_4_CHECKS: Time to wait between each check for accepted shares. <br />
+REBOOT_TIME: Lead time given to miners to start mining once they are rebooted by AntGuardian. <br />
+SECONDS_TO_INTERNET: Lead time given to miners to start mining again when internet connection is lost and recovered.
 
 ### Running
 Using the command prompt, while in the directory Downloads/AntGuardian, run the program by entering the command:
@@ -107,4 +121,3 @@ GBJMCLVHEVBDMT6GYZ7LPAQJJZHAOPD7KO2Y3GSUTH4XZYB3V3MV4BJY
 ```sh
 AGuQfFB4mHBCpUmXmGxtiU9vEZGBiu2ZCW
 ```
-
