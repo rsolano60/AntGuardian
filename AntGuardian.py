@@ -6,7 +6,7 @@
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
 USER = 'root'
 PASS = 'abajOlivia60' # Replace with your miner's password
-SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner to check the hashrate on a single thread, increase this number if monitoring 16 miners or more
+SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner, increase this number if monitoring 16 miners or more
 SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
 #--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP----
@@ -73,7 +73,7 @@ class Miner(object):
 	def getLastRebooted(self):
 		return self.__lastRebooted
 	def __str__(self):
-		info= " {0} good shares by [{1} @ {2}] Alive: {3}. Last reboot: {4}".format(self.__acceptedShares,self.__minerType,self.__ip,self.__alive,self.__lastRebooted.strftime('%Y-%m-%d %H:%M:%S.%f')[:-7])
+		info= " {0} good shares by [{1} @ {2}]. Last reboot: {3}".format(self.__acceptedShares,self.__minerType,self.__ip,self.__lastRebooted.strftime('%Y-%m-%d %H:%M:%S.%f')[:-7])
 		return info
 def internet(host="8.8.8.8", port=53, timeout=3): #Host: 8.8.8.8 (google-public-dns-a.google.com) - OpenPort: 53/tcp -
 	try:
