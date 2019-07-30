@@ -55,12 +55,6 @@ SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
 #--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP----
 ```
-*Options
-You may also change the time intervals (seconds): <br />
-
-SECONDS_4_CHECKS: Time to wait between each check for accepted shares. <br />
-REBOOT_TIME: Lead time given to miners to start mining once they are rebooted by AntGuardian. <br />
-SECONDS_TO_INTERNET: Lead time given to miners to start mining again when internet connection is lost and recovered.
 
 ### Running
 Using the command prompt, while in the directory Downloads/AntGuardian, run the program by entering the command:
@@ -74,10 +68,20 @@ python3 AntGuardian.py
 py AntGuardian.py
 
 ```
+## Options
+You may also change the time intervals (seconds): <br />
+
+* SECONDS_4_CHECKS: 
+Time to wait between each check for accepted shares. <br />
+* REBOOT_TIME: 
+Lead time given to miners to start mining once they are rebooted by AntGuardian. <br />
+* SECONDS_TO_INTERNET: 
+Lead time given to miners to start mining again when internet connection is lost and recovered.
+
+
+## Sample pictures (v0.0.1)
 
 ![alt text](https://raw.githubusercontent.com/rsolano60/Examples/master/init.jpeg)
-
-### Example: One miner restarting (out of 3)
 
 ![alt text](https://raw.githubusercontent.com/rsolano60/Examples/master/work.jpeg)
 
