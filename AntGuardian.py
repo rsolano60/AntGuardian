@@ -21,7 +21,6 @@ import html5lib
 import ast
 import nmap
 
-
 class Miner(object):
 #This class represents a Bitmain Antminer
 	def __init__(self,ip):
