@@ -95,14 +95,14 @@ See also the list of [contributors](https://github.com/rsolano60/AntGuardian/gra
 
 This project is licensed under the GNU GPL V3 License - see the [LICENSE](LICENSE) file for details
 
-# Please Donate to the project!:
-
+# Please Donate to the project!
+1 every 5 users have donated an average of $50, but even $1 helps!!! it would not be possible without you!!! <br />
 ### BITCOIN (BTC) address:
 BITCOIN QR code
 ```sh
 35w2Zmuj9Y83vb8uFvfjxQQfuzVYKwY4Dd
 ```
-![alt text](c)
+![alt text](https://blockchain.info/qr?data=35w2Zmuj9Y83vb8uFvfjxQQfuzVYKwY4Dd&size=200)
 
 ### ETHEREUM (ETH) address:
 ```sh
