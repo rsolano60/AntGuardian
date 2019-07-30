@@ -1,11 +1,11 @@
 #AntGuardian - A simple AntMiner monitor and auto-restart tool
 #By RSolano
 #License: GNU General Public license Version 3
-#Version 0.1.2
+#Version 0.1.1
 #    https://github.com/rsolano60/AntGuardian
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
 USER = 'root'
-PASS = 'root' # Replace with your miner's password
+PASS = 'abajOlivia60' # Replace with your miner's password
 SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner to check the hashrate on a single thread, increase this number if monitoring 16 miners or more
 SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
@@ -103,6 +103,11 @@ for ip in ipList:	# Create miner objects
 		minerList.append(m)
 		m.update()
 		print(m)
+if len(minerList) == 0:
+	print('Could not connect to any of the IPs:')
+	print(ipList)
+	print(' using the password provided...')
+	exit()
 secondsPerMiner = abs((SECONDS_4_CHECKS / len(minerList)) - (6*len(minerList)))
 print('Initialization complete. Found '+str(len(minerList))+' AntMiners. AntGuardian ACTIVE. Stop by closing this window or pressing Ctrl+C')
 time.sleep(SECONDS_4_CHECKS - (6*len(minerList)))
