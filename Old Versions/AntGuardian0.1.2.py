@@ -76,7 +76,6 @@ class Miner(object):
 		info= " {0} good shares by [{1} @ {2}]. Last reboot: {3}".format(self.__acceptedShares,self.__minerType,self.__ip,self.__lastRebooted.strftime('%Y-%m-%d %H:%M:%S.%f')[:-7])
 		return info
 def internet(host="8.8.8.8", port=53, timeout=3): #Host: 8.8.8.8 (google-public-dns-a.google.com) - OpenPort: 53/tcp -
-	time.sleep(0.1)
 	try:
 		socket.setdefaulttimeout(timeout)
 		socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
