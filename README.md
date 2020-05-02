@@ -2,8 +2,7 @@
 
 AntMiner monitor and auto-restart tool
 
-Compatible with all AntMiners from Bitmain
-Works on Linux, Windows and Mac OS
+Compatible with all AntMiners from Bitmain. Works on Linux, Windows and Mac OS
 
 Scans the local network for miners. Once connected, restarts any miner when accepted shares do not increase in SECONDS_4_CHECKS seconds, given that there is an active internet connection (checks with google.com).
 
