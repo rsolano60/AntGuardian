@@ -1,8 +1,9 @@
 # AntGuardian
 
-AntMiner monitor and auto-restart tool 
+AntMiner monitor and auto-restart tool
 
-Compatible with all AntMiners
+Compatible with all AntMiners from Bitmain
+Works on Linux, Windows and Mac OS
 
 Scans the local network for miners. Once connected, restarts any miner when accepted shares do not increase in SECONDS_4_CHECKS seconds, given that there is an active internet connection (checks with google.com).
 
@@ -20,6 +21,8 @@ https://nmap.org/download.html
 Most Mac and Linux distributions come with Python pre-installed. For windows and other systems, you may need to download and install Python first. Link:
 https://www.python.org/downloads/
 
+* PIP - Python Package Installer
+https://pip.pypa.io/en/stable/installing/
 
 ### Installation
 
@@ -80,6 +83,10 @@ Lead time given to miners to start mining once they are rebooted by AntGuardian.
 * SECONDS_TO_INTERNET: 
 Lead time given to miners to start mining again when internet connection is lost and recovered.
 
+## Discussion
+
+Official Thread:
+https://bitcointalk.org/index.php?topic=5177451.0
 
 ## Sample pictures (v0.0.1)
 
