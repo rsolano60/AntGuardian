@@ -1,7 +1,7 @@
 #AntGuardian - A simple AntMiner monitor and auto-restart tool
 #By RSolano
 #License: GNU General Public license Version 3
-#Version 0.1.1
+#Version 0.1.3
 #    https://github.com/rsolano60/AntGuardian
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
 USER = 'root'
