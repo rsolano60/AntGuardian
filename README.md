@@ -46,14 +46,15 @@ py -m pip install -r requirements.txt
 
 ### Setup
 
-If you have changed the password of your miners from the default "root", you must change the PASS varieble in the  script file AntGuardian.py
-Otherwise, you are ready to run the script.
+If you have changed the password of your miners from the default "root", you must change the PASS varieble in the script file "AntGuardian.py", for the actual password. Otherwise, you are ready to run the script.
 
 ```sh
 #SETUP:
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
 USER = 'root'
-PASS = 'root' # Replace with your miner's password
+```diff
+- PASS = 'root' # Replace with your miner's password
+```
 SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner, increase this number if monitoring 16 miners or more
 SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
@@ -90,10 +91,8 @@ To return to Antguardian:
 ```sh
 screen -r
 ```
-## Discussion
-Troubleshooting:
--
-## Discussion
+## Troubleshooting:
+-If you have any problems installing requirements, try a different version of Python. You might have multiple versions installed in your computer. If trouble persists. Uninstall all versions of Python and start from scratch 
 
 Official Thread:
 https://bitcointalk.org/index.php?topic=5177451.0
