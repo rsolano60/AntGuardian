@@ -52,9 +52,7 @@ If you have changed the password of your miners from the default "root", you mus
 #SETUP:
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
 USER = 'root'
-```diff
-- PASS = 'root' # Replace with your miner's password
-```
+PASS = 'root' # Replace with your miner's password
 SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner, increase this number if monitoring 16 miners or more
 SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
