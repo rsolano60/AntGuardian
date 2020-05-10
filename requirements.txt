@@ -1,6 +1,5 @@
 datetime
 bs4 
 html5lib
-ast
 requests
 python-nmap
