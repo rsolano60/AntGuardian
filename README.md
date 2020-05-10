@@ -8,6 +8,9 @@ Scans the local network for miners. Once connected, restarts any miner when acce
 
 This software and all its dependencies are free and open source. Free as in free speach not as in free beer, meaning it respects your freedom! Please star on GitHub and share with your miner friends!
 
+### Video Tutorial
+https://youtu.be/WvRvzdltIQQ 
+
 ### Prerequisites
 
 * NMap
@@ -33,16 +36,10 @@ https://github.com/rsolano60/AntGuardian
 Using the command prompt, navigate to directory Downloads/AntGuardian and run the command:
 
 
-(Mac and Linux) COMMAND:
+INSTALL COMMAND:
 ```sh
 pip install -r requirements.txt
 ```
-
-(Windows) COMMAND:
-```sh
-py -m pip install -r requirements.txt
-```
-
 
 ### Setup
 
@@ -62,14 +59,11 @@ REBOOT_TIME = 300
 ### Running
 Using the command prompt, while in the directory Downloads/AntGuardian, run the program by entering the command:
 
-(Mac & Linux) RUN COMMAND: 
+RUN COMMAND: 
 ```sh 
 python AntGuardian.py
 ```
-(Windows) RUN COMMAND:
-```sh
-py AntGuardian.py
-```
+
 ## Options
 You may also change the time intervals (seconds): <br />
 
