@@ -1,7 +1,7 @@
 #AntGuardian - A simple AntMiner monitor and auto-restart tool
 #By RSolano
 #License: GNU General Public license Version 3
-#Version 0.1.3
+#Version 0.1.4
 #    https://github.com/rsolano60/AntGuardian
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
 USER = 'root'
@@ -18,7 +18,6 @@ import requests
 from requests.auth import HTTPDigestAuth
 from bs4 import BeautifulSoup
 import html5lib
-import ast
 import nmap
 
 class Miner(object):
@@ -29,10 +28,14 @@ class Miner(object):
 		self.__lastRebooted = datetime.datetime.now() - datetime.timedelta(seconds=REBOOT_TIME)
 		try:
 			with requests.get('http://'+ip+'/cgi-bin/get_system_info.cgi', auth=HTTPDigestAuth(USER, PASS)) as r:
-				self.__minerType = ast.literal_eval(r.content)['minertype']
-			self.__alive=True
+				cont = str(r.content)
+				cont= cont[cont.find('Antminer'):]
+				cont= cont[:cont.find('"')]
+				self.__minerType = cont	
+				self.__alive=True
+				if not cont:
+					self.__alive=False
 		except:
-			self.__minerType = ''
 			self.__alive=False
 			#print("[{0}]: Could not initialize".format(self.__ip))
 	def Miner(self):
@@ -40,9 +43,7 @@ class Miner(object):
 	def update(self):
 		try:
 			with requests.get('http://'+self.__ip+'/cgi-bin/minerStatus.cgi', auth=HTTPDigestAuth(USER, PASS)) as r:
-				#print(r.content)
 				soup = BeautifulSoup(r.content, "html5lib")
-				#print(soup.prettify())
 				out = - self.__acceptedShares
 				self.__acceptedShares = int(soup.find_all_next('div', id='cbi-table-1-accepted')[-2].string.replace(',',''))
 				out += self.__acceptedShares
@@ -50,7 +51,7 @@ class Miner(object):
 			return out
 		except Exception as e:
 			self.__alive=False
-			print("[{0}]: Could not update".format(self.__ip))
+			#print("[{0}]: Could not update".format(self.__ip))
 			#print(e)
 			return 0
 	def reboot(self):
