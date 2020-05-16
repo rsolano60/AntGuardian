@@ -1,4 +1,4 @@
-![alt text](https://raw.githubusercontent.com/rsolano60/Examples/AntGuardian%201ogo-A4.jpg)
+![alt text](https://raw.githubusercontent.com/rsolano60/Examples/blob/master/AntGuardian%201ogo-A4.jpg)
 # AntGuardian
 
 AntMiner monitor and auto-restart tool
