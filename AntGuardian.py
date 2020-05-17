@@ -88,9 +88,9 @@ def internet(host="8.8.8.8", port=53, timeout=3): #Host: 8.8.8.8 (google-public-
 		return False
 f_path = abspath("logo.txt") ## Start of the program - Print Logo
 if exists(f_path):
-    with open(f_path) as f:
-        print(Fore.GREEN + Style.BRIGHT + f.read())
-	print(Style.RESET_ALL)
+	with open(f_path) as f:
+		print(Fore.GREEN + Style.BRIGHT + f.read())
+		print(Style.RESET_ALL)
 print('Initializing: Connecting to internet.') 
 while not internet(): ## Check for internet connection
 	print('Waiting for internet connection checking www.google.com..' )
