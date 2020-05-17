@@ -3,13 +3,13 @@
 #License: GNU General Public license Version 3
 #Version 0.1.5
 #    https://github.com/rsolano60/AntGuardian
-#---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
+#SETUP-----------------SETUP-----------------SETUP-----------------SETUP----------------
 USER = 'root'
 PASS = 'root' # Replace with your miner's password
 SECONDS_4_CHECKS = 95 # you need at least 6 seconds per miner, increase this number if monitoring 16 miners or more
 SECONDS_TO_INTERNET = 60
 REBOOT_TIME = 300
-#--------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP----
+#END-SETUP-------------END-SETUP-------------END-SETUP-------------END-SETUP-----------
 
 import time
 import datetime
@@ -20,7 +20,7 @@ from bs4 import BeautifulSoup
 import html5lib
 import nmap
 from os.path import abspath, exists
-from colorama import Fore, Back, Style 
+from colorama import Fore, Style 
 
 class Miner(object):
 #This class represents a Bitmain Antminer
@@ -75,7 +75,7 @@ class Miner(object):
 	def getLastRebooted(self):
 		return self.__lastRebooted
 	def __str__(self):
-		info= "{0} good shares by [{1} @ {2}]. Last reboot: {3}".format(self.__acceptedShares,self.__minerType,self.__ip,self.__lastRebooted.strftime('%Y-%m-%d %H:%M:%S.%f')[:-7])
+		info= "{0} shares by [{1} @ {2}]-Last reboot {3}".format(self.__acceptedShares,self.__minerType,self.__ip,self.__lastRebooted.strftime('%Y-%m-%d %H:%M:%S.%f')[:-7])
 		return info
 def internet(host="8.8.8.8", port=53, timeout=3): #Host: 8.8.8.8 (google-public-dns-a.google.com) - OpenPort: 53/tcp -
 	time.sleep(0.1)
@@ -89,7 +89,7 @@ def internet(host="8.8.8.8", port=53, timeout=3): #Host: 8.8.8.8 (google-public-
 f_path = abspath("logo.txt") ## Start of the program - Print Logo
 if exists(f_path):
     with open(f_path) as f:
-        print(Fore.GREEN + f.read())
+        print(Fore.GREEN + Style.BRIGHT + f.read())
 	print(Style.RESET_ALL)
 print('Initializing: Connecting to internet.') 
 while not internet(): ## Check for internet connection
