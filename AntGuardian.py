@@ -1,7 +1,7 @@
 #AntGuardian - A simple AntMiner monitor and auto-restart tool
 #By RSolano
 #License: GNU General Public license Version 3
-#Version 0.1.4
+#Version 0.1.5
 #    https://github.com/rsolano60/AntGuardian
 #---------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-----------------SETUP-------
 USER = 'root'
@@ -19,6 +19,8 @@ from requests.auth import HTTPDigestAuth
 from bs4 import BeautifulSoup
 import html5lib
 import nmap
+from os.path import abspath, exists
+from colorama import Fore, Back, Style 
 
 class Miner(object):
 #This class represents a Bitmain Antminer
@@ -61,10 +63,9 @@ class Miner(object):
 			self.__alive=True
 		except:
 			self.__alive=False
-			print("[{0}]: Could not reboot".format(self.__ip))
+			print("[{0}]: Could not reboot{1}".format(self.__ip,self.__minerType))
 			#print(e)			
-		return 0
-			
+		return 0	
 	def getIp(self):
 		return self.__ip
 	def getAccShares(self):
@@ -74,7 +75,7 @@ class Miner(object):
 	def getLastRebooted(self):
 		return self.__lastRebooted
 	def __str__(self):
-		info= " {0} good shares by [{1} @ {2}]. Last reboot: {3}".format(self.__acceptedShares,self.__minerType,self.__ip,self.__lastRebooted.strftime('%Y-%m-%d %H:%M:%S.%f')[:-7])
+		info= "{0} good shares by [{1} @ {2}]. Last reboot: {3}".format(self.__acceptedShares,self.__minerType,self.__ip,self.__lastRebooted.strftime('%Y-%m-%d %H:%M:%S.%f')[:-7])
 		return info
 def internet(host="8.8.8.8", port=53, timeout=3): #Host: 8.8.8.8 (google-public-dns-a.google.com) - OpenPort: 53/tcp -
 	time.sleep(0.1)
@@ -85,10 +86,16 @@ def internet(host="8.8.8.8", port=53, timeout=3): #Host: 8.8.8.8 (google-public-
 	except Exception as ex:
 		print(ex)
 		return False
-
-while not internet():
-	print('Waiting for internet connection checking www.google.com...' )
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+f_path = abspath("logo.txt") ## Start of the program - Print Logo
+if exists(f_path):
+    with open(f_path) as f:
+        print(Fore.GREEN + f.read())
+	print(Style.RESET_ALL)
+print('Initializing: Connecting to internet.') 
+while not internet(): ## Check for internet connection
+	print('Waiting for internet connection checking www.google.com..' )
+print('Getting local network I.P. list..')
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) #Get list of IPs from local network
 s.connect(('8.8.8.8', 80))
 myIP = s.getsockname()[0]
 s.close()
@@ -96,21 +103,23 @@ ipRange = myIP[:-3] + '0/24'
 nm = nmap.PortScanner()
 nm.scan(hosts=ipRange, arguments='-sn')
 ipList = nm.all_hosts()
-print('Initializing AntGuardian... Attempting to connect to miners')
+print('Attempting to connect to miners...')
+if len(ipList) == 0:
+	print('There are no discoverable hosts on the network... Make sure this computer is on the same network as your AntMiner(s)')
+	exit()
 minerList = []
 for ip in ipList:	# Create miner objects
 	m = Miner(ip)
 	if m.getAlive():
 		minerList.append(m)
 		m.update()
-		print(m)
+		print('Connected! Now monitoring this AntMiner: \n'+str(m))
 if len(minerList) == 0:
-	print('Could not connect to any of the IPs:')
-	print(ipList)
-	print(' using the password provided...')
+	print('Could not connect to any of the IPs:{0} with the password provided... Check: \n1)The PASS variable in file Antguardian.py is set to your actual miner(s) password. \n2)Your miner is connected to the same local network as this computer.'.format(ipList))
+	print('')
 	exit()
 secondsPerMiner = abs((SECONDS_4_CHECKS / len(minerList)) - (6*len(minerList)))
-print('Initialization complete: Found '+str(len(minerList))+' AntMiners.')
+print('Initialization complete: Found '+str(len(minerList))+' AntMiners')
 print('AntGuardian ACTIVE. Stop by closing this window or pressing Ctrl+C')
 time.sleep(SECONDS_4_CHECKS - (6*len(minerList)))
 while True:		# Main program loop
