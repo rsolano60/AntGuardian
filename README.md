@@ -73,8 +73,8 @@ Time to wait between each check for accepted shares. <br />
 * REBOOT_TIME: 
 Lead time given to miners to start mining once they are rebooted by AntGuardian. <br />
 * SECONDS_TO_INTERNET: 
-Lead time given to miners to start mining again when internet connection is lost and recovered.
-*To close the terminal without having AntGuardian stop, you can use the program "screen", running the program like this (Mac + linux):
+Lead time given to miners to start mining again when internet connection is lost and recovered. <br />
+* To close the terminal without having to quit AntGuardian, you can use the program "screen", running the program like this (Mac + linux):
 ```sh
 screen python AntGuardian.py
 ```
@@ -90,7 +90,7 @@ screen -r
 Official Thread:
 https://bitcointalk.org/index.php?topic=5177451.0
 
-## Sample pictures (v0.0.1)
+## Sample pictures
 
 ![alt text](https://raw.githubusercontent.com/rsolano60/Examples/master/init.jpeg)
 
