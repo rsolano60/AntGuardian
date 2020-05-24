@@ -1,4 +1,3 @@
-![alt text](https://raw.githubusercontent.com/rsolano60/Examples/master/AntGuardian%201ogo-A4.jpg)
 # AntGuardian
 
 AntMiner monitor and auto-restart tool
@@ -120,6 +119,9 @@ BITCOIN QR code:  <br />
 0x98a1B000f7B5f2EdB1ea2A830f0D3B33a2eC4075
 ```
 
+![alt text](https://raw.githubusercontent.com/rsolano60/Examples/master/AntGuardian%201ogo-A4.jpg)
+
+
 #### Other cryptocurrency addresses (ticker symbol):
 LITECOIN (LTC) <br />
 ```sh
@@ -145,3 +147,5 @@ Bitcoin Gold (BTG) <br />
 ```sh
 AGuQfFB4mHBCpUmXmGxtiU9vEZGBiu2ZCW
 ```
+
+Wow you are still here? thank you!! Please leave a STAR on GitHub :)
