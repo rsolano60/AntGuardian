@@ -10,7 +10,7 @@ Scans the local network for miners. Once connected, restarts any miner when acce
 This software and all its dependencies are free and open source. Free as in free speach not as in free beer, meaning it respects your freedom! Please star on GitHub and share with your miner friends!
 
 ### Video Tutorial
-https://youtu.be/WvRvzdltIQQ 
+https://www.youtube.com/watch?v=4nlnK1SP49s
 
 ### Prerequisites
 
