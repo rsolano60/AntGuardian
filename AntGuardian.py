@@ -118,10 +118,10 @@ if len(minerList) == 0:
 	print('Could not connect to any of the IPs:{0} with the password provided... Check: \n1)The PASS variable in file Antguardian.py is set to your actual miner(s) password. \n2)Your miner is connected to the same local network as this computer.'.format(ipList))
 	print('')
 	exit()
-secondsPerMiner = abs((SECONDS_4_CHECKS / len(minerList)) - (6*len(minerList)))
+secondsPerMiner = abs((SECONDS_4_CHECKS / len(minerList)) - (4*len(minerList)))
 print('Initialization complete: Found '+str(len(minerList))+' AntMiners')
 print('AntGuardian ACTIVE. Stop by closing this window or pressing Ctrl+C')
-time.sleep(SECONDS_4_CHECKS - (6*len(minerList)))
+time.sleep(secondsPerMiner)
 while True:		# Main program loop
 	for miner in minerList:
 		newShares = miner.update()
