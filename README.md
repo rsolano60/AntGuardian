@@ -40,6 +40,10 @@ INSTALL COMMAND:
 ```sh
 pip install -r requirements.txt
 ```
+If you have problems running PIP directly, try with this command:
+```sh
+python3 -m pip install -r requirements.txt 
+```
 
 ### Setup
 
